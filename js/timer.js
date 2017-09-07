@@ -9,6 +9,22 @@ var cur_cycles = 0;
 
 var cur_interval;
 
+function toggleFullScreen() {
+    var doc = window.document;
+    var docEl = doc.documentElement;
+
+    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+    if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+        requestFullScreen.call(docEl);
+    }
+    else {
+        cancelFullScreen.call(doc);
+    }
+}
+
+
 function show_hide(id){
     if (!(id in windows)){
         windows[id] = false;
@@ -24,6 +40,7 @@ function show_hide(id){
 
 function end_time(){
     $("body").css("background", "#ffffff");
+    toggleFullScreen();
 }
 
 function change_time(){
@@ -46,6 +63,7 @@ function change_time(){
 
 function start_time(){
     $("body").css("background", "#111");
+    toggleFullScreen();
     cur_time = 0;
     cur_cycles = 0;
     if (running){
