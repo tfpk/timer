@@ -62,13 +62,13 @@ function change_time(){
 }
 
 function start_time(){
+    if (running){
+        return
+    }
     $("body").css("background", "#111");
     toggleFullScreen();
     cur_time = 0;
     cur_cycles = 0;
-    if (running){
-        return
-    }
     running = true;
     cur_interval = window.setInterval(change_time, 100*CYCLE_TIME)
 }
