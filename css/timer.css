@@ -1,0 +1,39 @@
+.flex_center {
+    display:flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+}
+#container {
+    margin: 3%;
+    padding-top: 20%;
+}
+body {
+    background: #111;
+    -webkit-transition: background 1s;
+    -moz-transition:    background 1s;
+    -ms-transition:     background 1s;
+    -o-transition:      background 1s;
+    transition:         background 1s;
+}
+h1 {
+    color: #299;
+    padding: 10%;
+}
+svg{
+    padding: 10%;
+}
+circle{
+    -webkit-transition: fill 600ms;
+    -moz-transition   : fill 600ms;
+    -ms-transition    : fill 600ms;
+    -o-transition     : fill 600ms;
+    transition        : fill 600ms;
+}
+.blue_c {
+    fill: rgba(20, 90, 90, 70);
+}
+.white_c {
+    fill: rgba(150, 150, 150, 70);
+}
